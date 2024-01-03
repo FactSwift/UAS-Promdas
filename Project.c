@@ -37,3 +37,51 @@ void inputPemasukan(double *totalPemasukan, struct AkumulasiKategori kategori[],
         }
     } while (pemasukan != 0);
 }
+
+void inputKategori(struct PersentaseKategori persentaseKategori[], int *jumlahKategori) {
+
+    *jumlahKategori = 0;
+    double akumulasiPersen = 0.00;
+    int i = 0;
+    int test;
+
+    for (int i = 0; i < CATEGORIES_MAX; i++) {
+        while (getchar() != '\n');
+        printf("Masukkan nama kategori %d (masukkan 0 untuk berhenti): ", i + 1);
+        fgets(persentaseKategori[i].nama, sizeof(persentaseKategori[i].nama), stdin);
+        persentaseKategori[i].nama[strcspn(persentaseKategori[i].nama, "\n")] = '\0';
+
+        if (strcmp(persentaseKategori[i].nama, "0") == 0) {
+            break;
+        }
+
+        printf("Masukkan persentase untuk kategori %s: ", persentaseKategori[i].nama);
+        test = scanf("%f", &persentaseKategori[i].persentase);
+
+        if (test == 0) {
+            printf("Mohon masukkan angka untuk input: ");
+            fflush(stdin);}
+
+        akumulasiPersen += persentaseKategori[i].persentase;
+
+        if (akumulasiPersen == 100) {
+            printf("Berhasil! Kembali ke Menu Awal\n");
+            (*jumlahKategori)++;
+            break;
+        }
+
+        if (persentaseKategori[i].persentase < 0 || persentaseKategori[i].persentase > 100) {
+            printf("Persentase tidak valid. Silakan masukkan persentase antara 0 dan 100.\n");
+            printf("Persentase kategori tidak ditambahkan. Silakan coba lagi.\n");
+            i--;
+        } else {
+            if (akumulasiPersen > 100) {
+                printf("Akumulasi Persentase melebihi 100! Gagal Input Kategori %d\n", i + 1);
+                akumulasiPersen -= persentaseKategori[i].persentase;
+                i--;
+            } else {
+                (*jumlahKategori)++;
+            }
+        }
+    }
+}
