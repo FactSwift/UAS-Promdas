@@ -114,3 +114,20 @@ void inputPengeluaran(double *totalPengeluaran, double totalPemasukan, struct Ak
             printf("Nomor tidak terdaftar!.\n");
             return;
         }
+
+        strcpy(pengeluaran.kategori, kategori[kategoriTerpilih - 1].nama);
+
+        do {
+            printf("Masukkan nominal pengeluaran (tekan 1 untuk kembali ke pilih kategori, tekan 0 untuk kembali ke menu utama): ");
+            test = scanf("%lf", &pengeluaran.jumlah);
+
+            if (test == 0) {
+                printf("Mohon masukkan angka untuk input.\n");
+                fflush(stdin);}
+
+             else if (pengeluaran.jumlah == 1) {
+                kembaliKePilihanKategori = 1;
+                break;
+            } else if (pengeluaran.jumlah != 0) {
+                *totalPengeluaran += pengeluaran.jumlah;
+                kategori[kategoriTerpilih - 1].totalJumlah += pengeluaran.jumlah;
