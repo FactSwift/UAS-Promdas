@@ -165,7 +165,7 @@ void generateLaporanBulanan(double totalPemasukan, double totalPengeluaran, stru
         printf("\n Catatan: Pada periode ini, penggunaan keuangan anda sangat tidak baik.\n");
     }
 
-    printf("=============================\n");
+    printf("========================================\n");
 }
 
 // Main Function //
