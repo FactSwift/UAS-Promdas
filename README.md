@@ -29,10 +29,12 @@ Zaidan Ahmad 2305172
 - Download the Project.c file [here](https://github.com/FactSwift/UAS-Promdas/blob/main/Project.c)  
 - Run Project.c using any compilers
 ```bash
-  ===== Money Tracker =====
-  1. Input Pemasukan
-  2. Input Pengeluaran
-  3. Laporan Bulanan
-  4. Keluar
+========== Money Tracker! ==========
+1. Input Pemasukan
+2. Input Persentase Kategori
+3. Input Pengeluaran
+4. Laporan Bulanan
+5. Keluar
+Pilihan Anda: 
 ```
     
