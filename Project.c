@@ -131,3 +131,10 @@ void inputPengeluaran(double *totalPengeluaran, double totalPemasukan, struct Ak
             } else if (pengeluaran.jumlah != 0) {
                 *totalPengeluaran += pengeluaran.jumlah;
                 kategori[kategoriTerpilih - 1].totalJumlah += pengeluaran.jumlah;
+                if (kategori[kategoriTerpilih - 1].totalJumlah > persentaseKategori[kategoriTerpilih - 1].persentase / 100 * totalPemasukan) {
+                    printf("Pengeluaran anda melebihi batas!\n");
+                }
+            }
+        } while (pengeluaran.jumlah != 0 && pengeluaran.jumlah != 1);
+    } while (kembaliKePilihanKategori == 1);
+}
