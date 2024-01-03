@@ -157,3 +157,56 @@ void generateLaporanBulanan(double totalPemasukan, double totalPengeluaran, stru
 
     printf("=============================\n");
 }
+int main() {
+    double totalPemasukan = 0.0;
+    double totalPengeluaran = 0.0;
+    struct AkumulasiKategori kategori[CATEGORIES_MAX];
+    struct PersentaseKategori persentaseKategori[CATEGORIES_MAX];
+    int jumlahKategori = 0;
+    int pilihan;
+
+    do {
+        printf("\n========== Money Tracker! ==========\n");
+        printf("1. Input Pemasukan\n");
+        printf("2. Input Persentase Kategori\n");
+        printf("3. Input Pengeluaran\n");
+        printf("4. Laporan Bulanan\n");
+        printf("5. Keluar\n");
+        printf("Pilihan Anda: ");
+
+        int testLagi = scanf("%d", &pilihan);
+        if (testLagi == 0) {
+            printf("Silahkan memilih sesuai opsi.\n");
+            fflush(stdin);
+            continue;
+        }
+
+        switch (pilihan) {
+            case 1:
+                inputPemasukan(&totalPemasukan, kategori, &jumlahKategori);
+                break;
+
+            case 2:
+                inputKategori(persentaseKategori, &jumlahKategori);
+                break;
+
+            case 3:
+                inputPengeluaran(&totalPengeluaran, totalPemasukan, kategori, persentaseKategori, jumlahKategori);
+                break;
+
+            case 4:
+                generateLaporanBulanan(totalPemasukan, totalPengeluaran, persentaseKategori, kategori, jumlahKategori);
+                break;
+
+            case 5:
+                printf("Sampai jumpa!\n");
+                break;
+
+            default:
+                printf("Silahkan pilih sesuai opsi.\n");
+        }
+
+    } while (pilihan != 5);
+
+    return 0;
+}
