@@ -138,3 +138,22 @@ void inputPengeluaran(double *totalPengeluaran, double totalPemasukan, struct Ak
         } while (pengeluaran.jumlah != 0 && pengeluaran.jumlah != 1);
     } while (kembaliKePilihanKategori == 1);
 }
+
+void generateLaporanBulanan(double totalPemasukan, double totalPengeluaran, struct PersentaseKategori persentaseKategori[], struct AkumulasiKategori kategori[], int jumlahKategori) {
+    double sisaUang = totalPemasukan - totalPengeluaran;
+
+    printf("\n========== Laporan Total ==========\n");
+    printf("Total Pemasukan: %.2lf\n", totalPemasukan);
+    printf("Total Pengeluaran: %.2lf\n", totalPengeluaran);
+    printf("Sisa Uang: %.2lf\n", sisaUang);
+
+    printf("\n========== Ringkasan Kategori ==========\n");
+    for (int i = 0; i < jumlahKategori; i++) {
+        printf("%s: %.2lf\n", persentaseKategori[i].nama, kategori[i].totalJumlah);
+    }
+    if (sisaUang < 0) {
+        printf("\n Catatan: Pada periode ini, penggunaan keuangan anda sangat tidak baik.\n");
+    }
+
+    printf("=============================\n");
+}
