@@ -46,5 +46,5 @@ _Features:_
 - Reminder untuk mencegah pengeluaran lebih
 - Laporan bulanan atau periode pribadi
 
-## Demo
+## Project Presentation
 [![portfolio](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](null)
