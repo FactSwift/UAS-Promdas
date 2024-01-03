@@ -47,4 +47,4 @@ _Features:_
 - Laporan bulanan atau periode pribadi
 
 ## Project Presentation
-[![portfolio](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](null)
+[![portfolio](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/pdm1PyRmVWY?si=NdQ66jc9Bb7vF-H3)
