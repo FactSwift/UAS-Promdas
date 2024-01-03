@@ -1,5 +1,7 @@
 # UAS-Promdas / Money Tracker
-**Category-based money management project.**
+**Category-based money management project.**  
+
+**Aplikasi manajemen uang berbasis kategori.**
 
 _Developers:_  
 Adzka Dzikri Imanullah 2301706  
@@ -26,8 +28,8 @@ Zaidan Ahmad 2305172
 
 
 ## Application Usage
-- Download the Project.c file [here](https://github.com/FactSwift/UAS-Promdas/blob/main/Project.c)  
-- Run Project.c using any compilers
+- Download Project.c file [here](https://github.com/FactSwift/UAS-Promdas/blob/main/Project.c)  
+- Jalankan Project.c menggunakan compiler yang ada
 ```bash
 ========== Money Tracker! ==========
 1. Input Pemasukan
@@ -37,4 +39,12 @@ Zaidan Ahmad 2305172
 5. Keluar
 Pilihan Anda: 
 ```
-    
+_Features:_  
+- 
+- Pencatat keuangan bulanan atau periode pribadi
+- Penyesuaian kategori pengeluaran sesuai preferensi
+- Reminder untuk mencegah pengeluaran lebih
+- Laporan bulanan atau periode pribadi
+
+## Demo
+[![portfolio](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](null)
