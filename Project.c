@@ -85,3 +85,32 @@ void inputKategori(struct PersentaseKategori persentaseKategori[], int *jumlahKa
         }
     }
 }
+
+void inputPengeluaran(double *totalPengeluaran, double totalPemasukan, struct AkumulasiKategori kategori[], struct PersentaseKategori persentaseKategori[], int jumlahKategori) {
+    struct Transaksi pengeluaran;
+    int kembaliKePilihanKategori;
+    int test;
+
+    if (jumlahKategori == 0) {
+        printf("Silakan tambahkan kategori terlebih dahulu.\n");
+        return;
+    }
+
+    do {
+        printf("Pilih kategori pengeluaran:\n");
+        for (int i = 0; i < jumlahKategori; i++) {
+            printf("%d. %s\n", i + 1, persentaseKategori[i].nama);
+        }
+
+        int kategoriTerpilih;
+        printf("Pilih nomor kategori (1-%d) atau 0 untuk kembali ke menu utama: ", jumlahKategori);
+        scanf("%d", &kategoriTerpilih);
+
+        if (kategoriTerpilih == 0) {
+            return;
+        }
+
+        if (kategoriTerpilih < 1 || kategoriTerpilih > jumlahKategori) {
+            printf("Nomor tidak terdaftar!.\n");
+            return;
+        }
