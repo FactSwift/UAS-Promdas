@@ -1,10 +1,18 @@
+//PROJEK-TA PROMDAS//
+// Money Tracker! //
+/*Kelompok 3 - MKB 1A*/
+
+//Run on your compiler to start the program -->
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+
+// Constant //
 #define CATEGORIES_MAX 99
 #define CATEGORIES_NAMA 99
 
+// Struct //
 struct Transaksi {
     char kategori[50];
     double jumlah;
@@ -20,6 +28,7 @@ struct AkumulasiKategori {
     double totalJumlah;
 };
 
+// Function //
 void inputPemasukan(double *totalPemasukan, struct AkumulasiKategori kategori[], int *jumlahKategori) {
     double pemasukan;
     int test;
@@ -131,6 +140,7 @@ void inputPengeluaran(double *totalPengeluaran, double totalPemasukan, struct Ak
             } else if (pengeluaran.jumlah != 0) {
                 *totalPengeluaran += pengeluaran.jumlah;
                 kategori[kategoriTerpilih - 1].totalJumlah += pengeluaran.jumlah;
+
                 if (kategori[kategoriTerpilih - 1].totalJumlah > persentaseKategori[kategoriTerpilih - 1].persentase / 100 * totalPemasukan) {
                     printf("Pengeluaran anda melebihi batas!\n");
                 }
@@ -157,6 +167,8 @@ void generateLaporanBulanan(double totalPemasukan, double totalPengeluaran, stru
 
     printf("=============================\n");
 }
+
+// Main Function //
 int main() {
     double totalPemasukan = 0.0;
     double totalPengeluaran = 0.0;
