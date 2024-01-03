@@ -68,8 +68,9 @@ void inputKategori(struct PersentaseKategori persentaseKategori[], int *jumlahKa
         test = scanf("%f", &persentaseKategori[i].persentase);
 
         if (test == 0) {
-            printf("Mohon masukkan angka untuk input: ");
-            fflush(stdin);}
+            printf("Mohon masukkan angka untuk input.");
+            fflush(stdin);
+            break;}
 
         akumulasiPersen += persentaseKategori[i].persentase;
 
